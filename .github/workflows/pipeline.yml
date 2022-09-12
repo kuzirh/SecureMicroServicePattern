@@ -1,0 +1,26 @@
+name: Pipeline
+on: [push]
+jobs:
+  run-lint:
+    name: Code Linting
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out Repo
+        uses: actions/checkout@v3
+
+      - name: Set up NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Navigate to src
+        run: cd src
+
+      - name: Install NodeJS Dependencies
+        run: npm ci
+
+      - name: Run Linters
+        uses: wearerequired/lint-action@v2
+        with:
+          prettier: true
