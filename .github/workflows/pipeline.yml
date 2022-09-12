@@ -15,7 +15,7 @@ jobs:
           node-version: 16
 
       - name: Navigate to src
-        run: cd src
+        run: cd $GITHUB_WORKSPACE/src
 
       - name: Install NodeJS Dependencies
         run: npm ci
