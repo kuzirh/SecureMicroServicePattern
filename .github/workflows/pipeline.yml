@@ -1,8 +1,8 @@
 name: Pipeline
 on: [push]
 jobs:
-  run-lint:
-    name: Code Linting
+  run-prettier:
+    name: Running Prettier
     runs-on: ubuntu-latest
     defaults:
       run:
