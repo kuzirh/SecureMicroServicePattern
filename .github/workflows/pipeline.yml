@@ -21,6 +21,8 @@ jobs:
         run: npm ci
 
       - name: Run Linters
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         uses: wearerequired/lint-action@v2
         with:
           prettier: true
