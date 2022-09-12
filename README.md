@@ -8,8 +8,8 @@ My name is Kuzirh, I am a security engineer out of sunny Florida. I have a passi
 It should be noted that the contents of this repo is of my own work and any code that is used from outside sources shall be [referenced](REFERENCES.md). That being said, this repo is built with open-source in mind, and can be used by anyone!
 
 ## Table of Contents:
-- [Project Details](Project.md)
+- [Project Details](docs/PROJECT.md)
 - Progress Reports:
-  - [WEEK ONE](Progress_Reports/WEEK_ONE.md)
-- [References](REFERENCES.md)
-- [Pipeline](PIPELINE.md)
+  - [WEEK ONE](docs/Progress_Reports/WEEK_ONE.md)
+- [References](docs/REFERENCES.md)
+- [Pipeline](docs/PIPELINE.md)
