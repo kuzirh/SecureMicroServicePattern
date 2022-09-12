@@ -10,5 +10,6 @@ It should be noted that the contents of this repo is of my own work and any code
 ## Table of Contents:
 - [Project Details](Project.md)
 - Progress Reports:
-  - [WEEK ONE](WEEK_ONE.md)
+  - [WEEK ONE](Progress_Reports/WEEK_ONE.md)
 - [References](REFERENCES.md)
+- [Pipeline](PIPELINE.md)
