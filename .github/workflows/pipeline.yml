@@ -15,14 +15,10 @@ jobs:
       - name: Set up NodeJS
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 12
 
       - name: Install NodeJS Dependencies
         run: npm ci
 
-      - name: Run Linters
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        uses: wearerequired/lint-action@v2
-        with:
-          prettier: true
+      - name: Run Linter
+        run: npx prettier -c .
