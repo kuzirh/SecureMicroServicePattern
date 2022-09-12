@@ -4,6 +4,9 @@ jobs:
   run-lint:
     name: Code Linting
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./src
 
     steps:
       - name: Check out Repo
@@ -15,11 +18,9 @@ jobs:
           node-version: 16
 
       - name: Install NodeJS Dependencies
-        working-directory: src
         run: npm ci
 
       - name: Run Linters
-        working-directory: src
         uses: wearerequired/lint-action@v2
         with:
           prettier: true
