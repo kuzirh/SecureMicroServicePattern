@@ -15,9 +15,11 @@ jobs:
           node-version: 16
 
       - name: Install NodeJS Dependencies
-        run: cd $GITHUB_WORKSPACE/src && npm ci
+        working-directory: src
+        run: npm ci
 
       - name: Run Linters
+        working-directory: src
         uses: wearerequired/lint-action@v2
         with:
           prettier: true
