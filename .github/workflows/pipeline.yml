@@ -9,7 +9,7 @@ jobs:
         working-directory: ./src
 
     steps:
-      - name: Check out Repo
+      - name: Check Out Repo
         uses: actions/checkout@v3
 
       - name: Set up NodeJS
@@ -22,3 +22,25 @@ jobs:
 
       - name: Run Linter
         run: npx prettier -c .
+  run-unit-test:
+    name: Running Unit Tests
+    needs: [run-prettier]
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./src
+
+    steps:
+      - name: Check Out Repo
+        uses: actions/checkout@v3
+
+      - name: Set up NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: 12
+
+      - name: Install NodeJS Dependencies
+        run: npm ci
+
+      - name: Run Unit Tests
+        run: npx jest --coverage
