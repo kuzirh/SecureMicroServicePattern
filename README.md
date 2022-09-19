@@ -11,5 +11,6 @@ It should be noted that the contents of this repo is of my own work and any code
 - [Project Details](docs/PROJECT.md)
 - Progress Reports:
   - [WEEK ONE](docs/Progress_Reports/WEEK_ONE.md)
+  - [WEEK TWO](docs/Progress_Reports/WEEK_TWO.md)
 - [References](docs/REFERENCES.md)
 - [Pipeline](docs/PIPELINE.md)
