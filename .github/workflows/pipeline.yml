@@ -7,40 +7,50 @@ jobs:
     defaults:
       run:
         working-directory: ./src
-
     steps:
       - name: Check Out Repo
         uses: actions/checkout@v3
-
       - name: Set up NodeJS
         uses: actions/setup-node@v3
         with:
-          node-version: 12
-
+          node-version: 16
       - name: Install NodeJS Dependencies
         run: npm ci
-
-      - name: Run Linter
+      - name: Run Formatter
         run: npx prettier -c .
-  run-unit-test:
-    name: Running Unit Tests
+  run-linter:
+    name: Running Linter
     needs: [run-prettier]
     runs-on: ubuntu-latest
     defaults:
       run:
         working-directory: ./src
-
     steps:
       - name: Check Out Repo
         uses: actions/checkout@v3
-
       - name: Set up NodeJS
         uses: actions/setup-node@v3
         with:
-          node-version: 12
-
+          node-version: 16
       - name: Install NodeJS Dependencies
         run: npm ci
-
+      - name: Run Linter
+        run: npx eslint . --ext .ts
+  run-unit-test:
+    name: Running Unit Tests
+    needs: [run-prettier, run-linter]
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./src
+    steps:
+      - name: Check Out Repo
+        uses: actions/checkout@v3
+      - name: Set up NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Install NodeJS Dependencies
+        run: npm ci
       - name: Run Unit Tests
         run: npx jest --coverage

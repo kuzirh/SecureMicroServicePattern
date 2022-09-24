@@ -29,7 +29,11 @@ The pipeline will be structured in such a way that the checks on the code base w
     - To understand this job we should explain exactly what technology we are using to create resources in AWS, that information can be found here: [INFRASTRUCTURE.md](/docs/INFRASTRUCTURE.md)
     - The Checkov tool is an open source scanner that runs static analysis against the code that is used to create resources. In this example we are creating resources using the CDK.
     - Checkov will likely be used in the following manner:
-        - Job runs `cdk synth` to synthesize the TypeScript CDK code into 
+        - Job runs `cdk synth` to synthesize the TypeScript CDK code into ClouidFormation templates (JSON files)
+        - Job runs Checkov tool against the CloudFormation Template in `cdk.out`
+- ### Static Analysis Security Testing, SAST (SEMGREP)
+  - The repo will make use of the tool `Semgrep` in order to provide static analysis testing on the codebase.
+- ### Dynamic Analysis Security Testing, DAST (OWASP ZAP)
 
 
 
@@ -37,4 +41,9 @@ The pipeline will be structured in such a way that the checks on the code base w
  
 ## Testing GitHub Actions
 
-Making use of 'Act' in order to test github actions locally.
+There was a need to figure out how to test the GitHub Actions locally because of the pricing model for the Actions themselves. Developers on GitHub only get so many minutes of server time to run their Actions on, so to combat this there was developed a way to run the actions locally using a tool called `Act`.
+
+The tool makes use of Docker by pulling the source code and the GitHub Actions onto a Docker container and running the actions on the code as if it were on a GitHub Action's runner. 
+
+More documentation can be found here - [Act](https://github.com/nektos/act#readme)
+
