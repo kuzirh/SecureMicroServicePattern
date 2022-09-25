@@ -29,7 +29,7 @@ The pipeline will be structured in such a way that the checks on the code base w
     - To understand this job we should explain exactly what technology we are using to create resources in AWS, that information can be found here: [INFRASTRUCTURE.md](/docs/INFRASTRUCTURE.md)
     - The Checkov tool is an open source scanner that runs static analysis against the code that is used to create resources. In this example we are creating resources using the CDK.
     - Checkov will likely be used in the following manner:
-        - Job runs `cdk synth` to synthesize the TypeScript CDK code into ClouidFormation templates (JSON files)
+        - Job runs `cdk synth` to synthesize the TypeScript CDK code into CloudFormation templates (JSON files)
         - Job runs Checkov tool against the CloudFormation Template in `cdk.out`
 - ### Static Analysis Security Testing, SAST (SEMGREP)
   - The repo will make use of the tool `Semgrep` in order to provide static analysis testing on the codebase.
