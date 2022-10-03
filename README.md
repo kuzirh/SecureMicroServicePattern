@@ -17,5 +17,6 @@ It should be noted that the contents of this repo is of my own work and any code
   - [WEEK ONE](docs/Progress_Reports/WEEK_ONE.md)
   - [WEEK TWO](docs/Progress_Reports/WEEK_TWO.md)
   - [WEEK THREE](docs/Progress_Reports/WEEK_THREE.md)
+  - [WEEK FOUR](docs/Progress_Reports/WEEK_FOUR.md)
 - [References](docs/REFERENCES.md)
 - [Pipeline](docs/PIPELINE.md)
