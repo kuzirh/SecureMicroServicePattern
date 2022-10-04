@@ -5,7 +5,7 @@ export class HelloWorld extends Stack {
   constructor(scope: Stack, id: string) {
     super(scope, id);
 
-    const HelloWorldFunction = new Lambda(this, 'helloWorld', {
+    new Lambda(this, 'helloWorld', {
       runtime: lambda.Runtime.NODEJS_16_X,
       code: lambda.Code.fromAsset(resolve('./build/functions/helloWorld')),
       handler: 'index.handler',

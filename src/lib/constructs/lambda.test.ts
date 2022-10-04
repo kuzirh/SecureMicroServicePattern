@@ -1,7 +1,5 @@
-import { aws_lambda as lambda, Stack } from 'aws-cdk-lib';
-import { Match, Template } from 'aws-cdk-lib/assertions';
-import { Role } from 'aws-cdk-lib/aws-iam';
-import { Code, Handler, Runtime } from 'aws-cdk-lib/aws-lambda';
+import { Stack } from 'aws-cdk-lib';
+import { Template } from 'aws-cdk-lib/assertions';
 import * as HelloWorld from '../helloWorld/index';
 describe('#HelloWorld Stack', () => {
   test('Only one lambda function should be created', () => {
