@@ -8,7 +8,10 @@
     "build": "sh install.sh",
     "watch": "tsc -w",
     "test": "jest",
-    "cdk": "cdk"
+    "cdk": "cdk",
+    "prettier-check": "npx prettier -c .",
+    "prettier-format": "npx prettier -w .",
+    "eslint-check": "npx eslint . --ext .ts"
   },
   "devDependencies": {
     "@types/jest": "^27.5.2",

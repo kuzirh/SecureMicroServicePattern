@@ -1,0 +1,26 @@
+{
+  "name": "securemicroservicepattern",
+  "version": "1.0.0",
+  "description": "Welcome! You seem to have stumbled upon this repo by chance, but thank you for taking a look. This repo is a part of a Capstone project for my Masters of Science in Information Assurance and Cybersecurity. This repo will contain only components of the project that are allowed to be public, and is meant to serve as a reusable pattern for anyone.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kuzirh/SecureMicroServicePattern.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kuzirh/SecureMicroServicePattern/issues"
+  },
+  "homepage": "https://github.com/kuzirh/SecureMicroServicePattern#readme",
+  "devDependencies": {
+    "husky": "^8.0.1"
+  }
+}
