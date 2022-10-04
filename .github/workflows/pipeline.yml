@@ -51,9 +51,9 @@ jobs:
         with:
           node-version: 16
       - name: Install NodeJS Dependencies
-        run: npm ci && npm run build
-      - name: Run Unit Tests
-        run: npx jest --coverage
+        run: npm ci && npm run build && npx tsc && npm run test
+      # - name: Run Unit Tests
+      #   run: npx jest --coverage
   run-iac-scan:
     name: Running IAC Scan
     needs: [run-prettier, run-linter, run-unit-test]
@@ -69,11 +69,11 @@ jobs:
         with:
           node-version: 16
       - name: Install NodeJS Dependencies
-        run: npm ci && npm install -g aws-cdk
+        run: npm ci && npm install -g aws-cdk && npx tsc
       - name: CDK Synthesize
         run: cdk synth
       - name: Set Up Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.10"
+          python-version: '3.10'
       - run: pip install checkov && checkov -d cdk.out/ --framework cloudformation -s --hard-fail-on critical,high
