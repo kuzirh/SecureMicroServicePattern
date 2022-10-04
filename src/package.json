@@ -11,7 +11,8 @@
     "cdk": "cdk",
     "prettier-check": "npx prettier -c .",
     "prettier-format": "npx prettier -w .",
-    "eslint-check": "npx eslint . --ext .ts"
+    "eslint-check": "npx eslint . --ext .ts",
+    "pre-commit": "npm run test && npm run prettier-check && npm run prettier-format && npm run eslint-check"
   },
   "devDependencies": {
     "@types/jest": "^27.5.2",
