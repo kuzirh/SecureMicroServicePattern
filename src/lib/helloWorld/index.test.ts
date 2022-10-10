@@ -6,9 +6,16 @@ describe('#HelloWorld Stack', () => {
   test('Only one lambda function should be created', () => {
     const app = new App();
     // WHEN
-    const helloWorldStack = new HelloWorld(app, 'MyHelloWorldTestStack');
+    const helloWorldStack = new HelloWorld(app);
     // THEN
     const template = Template.fromStack(helloWorldStack);
     template.resourceCountIs('AWS::Lambda::Function', 1);
+  });
+
+  test('S3 Bucket should be created', () => {
+    const app = new App();
+    const helloWorkStack = new HelloWorld(app);
+    const template = Template.fromStack(helloWorkStack);
+    template.resourceCountIs('AWS::S3::Bucket', 1);
   });
 });
