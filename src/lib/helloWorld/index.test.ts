@@ -1,6 +1,5 @@
 import { App } from 'aws-cdk-lib';
 import { Template } from 'aws-cdk-lib/assertions';
-import { BucketEncryption } from 'aws-cdk-lib/aws-s3';
 import { HelloWorld } from '../helloWorld/index';
 
 describe('#HelloWorld Stack', () => {
