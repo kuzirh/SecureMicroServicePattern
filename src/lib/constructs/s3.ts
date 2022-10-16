@@ -2,8 +2,6 @@ import { Construct } from 'constructs';
 import { aws_s3 as s3 } from 'aws-cdk-lib';
 import { BucketEncryption } from 'aws-cdk-lib/aws-s3';
 
-// interface S3Props {}
-
 export class S3 extends Construct {
   constructor(scope: Construct, id: string) {
     super(scope, id);

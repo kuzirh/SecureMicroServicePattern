@@ -1,6 +1,12 @@
-import { aws_lambda as lambda, App, Stack } from 'aws-cdk-lib';
+import {
+  aws_lambda as lambda,
+  aws_dynamodb as ddb,
+  App,
+  Stack,
+} from 'aws-cdk-lib';
 import { Lambda } from '../constructs/lambda';
 import { S3 } from '../constructs/s3';
+import { DDB } from '../constructs/ddb';
 import { resolve } from 'path';
 
 export class HelloWorld extends Stack {
@@ -15,5 +21,9 @@ export class HelloWorld extends Stack {
     });
 
     new S3(this, 'buckets');
+
+    new DDB(this, 'table', {
+      partitionKey: { name: 'sender', type: ddb.AttributeType.STRING },
+    });
   }
 }
