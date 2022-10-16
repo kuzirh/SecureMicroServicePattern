@@ -1,5 +1,5 @@
 import { App } from 'aws-cdk-lib';
-import { Match, Template } from 'aws-cdk-lib/assertions';
+import { Template } from 'aws-cdk-lib/assertions';
 import { HelloWorld } from '../helloWorld/index';
 
 describe('#HelloWorld Stack', () => {
