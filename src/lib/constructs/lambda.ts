@@ -15,6 +15,7 @@ export class Lambda extends Construct {
       runtime: props.runtime,
       code: props.code,
       handler: props.handler,
+      reservedConcurrentExecutions: 100,
     };
 
     new lambda.Function(this, 'placeholder', lambdaConfig);
