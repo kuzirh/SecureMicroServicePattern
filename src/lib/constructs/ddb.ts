@@ -8,6 +8,8 @@ export class DDB extends Construct {
 
     const ddbConfig = {
       ...props,
+      encryption: ddb.TableEncryption.CUSTOMER_MANAGED,
+      pointInTimeRecovery: true,
     };
     new ddb.Table(this, 'placeholder', ddbConfig);
   }

@@ -12,7 +12,8 @@
     "prettier-check": "npx prettier -c .",
     "prettier-format": "npx prettier -w .",
     "eslint-check": "npx eslint . --ext .ts",
-    "pre-commit": "npm run test && npm run prettier-format && npm run eslint-check"
+    "pre-commit": "npm run test && npm run prettier-format && npm run eslint-check",
+    "checkov-scan": "rm -rf cdk.out && cdk synth && checkov -d cdk.out/ --framework cloudformation"
   },
   "devDependencies": {
     "@types/jest": "^27.5.2",
