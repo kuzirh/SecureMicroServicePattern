@@ -83,6 +83,7 @@ jobs:
           directory: src/cdk.out/
           framework: cloudformation
           hard_fail_on: HIGH
+          skip_check: CKV_AWS_18, CKV_AWS_116, CKV_AWS_117
       # - name: Set Up Python
       #   uses: actions/setup-python@v4
       #   with:
