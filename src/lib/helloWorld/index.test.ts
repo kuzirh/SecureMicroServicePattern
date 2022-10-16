@@ -1,5 +1,5 @@
 import { App } from 'aws-cdk-lib';
-import { Template } from 'aws-cdk-lib/assertions';
+import { Match, Template } from 'aws-cdk-lib/assertions';
 import { HelloWorld } from '../helloWorld/index';
 
 describe('#HelloWorld Stack', () => {
@@ -17,5 +17,19 @@ describe('#HelloWorld Stack', () => {
     const helloWorkStack = new HelloWorld(app);
     const template = Template.fromStack(helloWorkStack);
     template.resourceCountIs('AWS::S3::Bucket', 1);
+  });
+
+  test('S3 Bucket should be created with proper security configurations', () => {
+    const app = new App();
+    const helloWorkStack = new HelloWorld(app);
+    const template = Template.fromStack(helloWorkStack);
+    template.hasResourceProperties('AWS::S3::Bucket', {
+      PublicAccessBlockConfiguration: {
+        BlockPublicAcls: true,
+        BlockPublicPolicy: true,
+        IgnorePublicAcls: true,
+        RestrictPublicBuckets: true,
+      },
+    });
   });
 });

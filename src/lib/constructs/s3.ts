@@ -7,7 +7,14 @@ export class S3 extends Construct {
   constructor(scope: Construct, id: string) {
     super(scope, id);
 
-    const s3Config = {};
+    const s3Config = {
+      blockPublicAccess: {
+        blockPublicAcls: true,
+        blockPublicPolicy: true,
+        ignorePublicAcls: true,
+        restrictPublicBuckets: true,
+      },
+    };
 
     new s3.Bucket(this, 'placeholder', s3Config);
   }
