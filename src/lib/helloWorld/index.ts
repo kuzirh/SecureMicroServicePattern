@@ -6,6 +6,7 @@ import { resolve } from 'path';
 export class HelloWorld extends Stack {
   constructor(scope: App) {
     super(scope);
+    //checkov:skip=CKV_AWS_117:Function needs access to DDB, cannot be in VPC
     new Lambda(this, 'helloWorld', {
       runtime: lambda.Runtime.NODEJS_16_X,
       code: lambda.Code.fromAsset(
